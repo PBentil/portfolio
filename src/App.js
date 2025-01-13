@@ -1,7 +1,9 @@
 // import logo from './logo.svg';
 import './App.css';
 import './index.css';
+import React, { useEffect } from "react";
 import bentil from './bentil.jpeg'
+
 //icons 
 import { FaHtml5 } from "react-icons/fa6";
 import { SiCss3 } from "react-icons/si";
@@ -17,10 +19,14 @@ import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 
 function App() {
+  useEffect(() => {
+    document.title = "Paapa Kwesi Bentil"; // Change the title here
+  }, []); // The empty dependency array ensures this runs only once when the component mounts
+
   return (
     <div>
       <div className='flex justify-around mt-2 border w-full rounded-2xl bg-gray-300 h-16 text-center'>
-      <img
+        <img
           src={bentil}
           alt="Bentil"
           className=" h-16 w-16 object-cover  rounded-full shadow-lg"
@@ -74,7 +80,7 @@ function App() {
       </div><br /><br /><br />
       <div className='text-center bg-gray-300 p-10'>
         <h1 className='text-xl'>PROFESSIONAL SUMMARY</h1><br />
-        <p className='w-2/3 ml-72'>I am a passionate and detail-oriented Fullstack Engineer with experience in designing, developing, and maintaining dynamic web applications. Proficient in both frontend and backend technologies, including React, JavaScript, TailwindCSS, Java, and PHP, I have a strong foundation in building responsive, user-friendly interfaces and creating efficient, scalable server-side solutions. My expertise lies in creating seamless user experiences, optimizing performance, and working collaboratively with cross-functional teams to deliver high-quality products.
+        <p className='text-center'>I am a passionate and detail-oriented Fullstack Engineer with experience in designing, developing, and maintaining dynamic web applications. Proficient in both frontend and backend technologies, including React, JavaScript, TailwindCSS, Java, and PHP, I have a strong foundation in building responsive, user-friendly interfaces and creating efficient, scalable server-side solutions. My expertise lies in creating seamless user experiences, optimizing performance, and working collaboratively with cross-functional teams to deliver high-quality products.
 
           With a keen eye for design and a focus on clean, maintainable code, I strive to continually enhance my skills and stay up-to-date with the latest industry trends. I am committed to delivering solutions that not only meet technical requirements but also exceed user expectations.
 
@@ -86,13 +92,20 @@ function App() {
           </div>
           <div>
             <h2>Drop an email</h2>
-            <p className='flex'><MdEmail className='mt-1 mr-1' color='black'/>paapabentil122@gmail.com</p>
+            <p className='flex'><MdEmail className='mt-1 mr-1' color='black' />paapabentil122@gmail.com</p>
           </div>
           <div>
             <h2>Follow me</h2>
-            <p className='flex'><FaGithub className='mt-1 mr-1' color='black'/><FaLinkedin className='mt-1 mr-1' color='black'/></p>
+            <p className='flex'><FaGithub className='mt-1 mr-1' color='black' /><FaLinkedin className='mt-1 mr-1' color='black' /></p>
           </div>
-        </div>
+        </div> <br /><br />
+      </div>
+      <div className='text-center bg-black text-white p-4'>
+        <h1 className='text-2xl'>Certified Full-Stack Developer</h1>
+      </div>
+      <div className='mt-4'>
+        <h1 className='text-center text-xl text-gray-400'>Portfolio</h1>
+        <h1 className='text-center text-2xl'>Recent Works</h1>
       </div>
 
     </div>
