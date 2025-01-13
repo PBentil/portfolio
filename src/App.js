@@ -38,7 +38,9 @@ function App() {
           <a href='/'>Portfolio</a>
           <a href='/' onClick={() => alert('coming soon')}>Blog</a>
         </div>
-        <button className='text-white bg-black p-1 w-32  h-10 mt-3 rounded-2xl hover:text-black hover:bg-white'>Hire me</button>
+        <button className='text-white bg-black p-1 w-32  h-10 mt-3 rounded-2xl hover:text-black hover:bg-white'><a href="mailto:paapabentil122@gmail.com" target="_blank" rel="noopener noreferrer">
+  Hire Me
+</a></button>
       </div>
       <div className=" flex justify-center items-center h-screen w-screen space-x-24 ">
         <img
@@ -92,11 +94,20 @@ function App() {
           </div>
           <div>
             <h2>Drop an email</h2>
-            <p className='flex'><MdEmail className='mt-1 mr-1' color='black' />paapabentil122@gmail.com</p>
+            <p className='flex'><MdEmail className='mt-1 mr-1' color='black' /><a href="mailto:paapabentil122@gmail.com" target="_blank" rel="noopener noreferrer">
+              paapabentil122@gmail.com
+            </a></p>
           </div>
           <div>
             <h2>Follow me</h2>
-            <p className='flex'><FaGithub className='mt-1 mr-1' color='black' /><FaLinkedin className='mt-1 mr-1' color='black' /></p>
+            <p className='flex'>
+              <a href='https://github.com/PBentil' rel='noopener noreferrer' className='flex items-center mt-1 mr-1'>
+                <FaGithub color='black' size={24} />
+              </a>
+              <a href="https://www.linkedin.com/in/paapa-bentil-89b613268" rel="noopener noreferrer" className="flex items-center mt-1 mr-1">
+                <FaLinkedin color="blue" size={24} />
+              </a>
+            </p>
           </div>
         </div> <br /><br />
       </div>
