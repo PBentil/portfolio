@@ -5,3 +5,7 @@
 body{
   @apply bg-gray-100 text-black font-serif
 }
+
+html {
+  scroll-behavior: smooth; /* Enables smooth scrolling across the whole page */
+}

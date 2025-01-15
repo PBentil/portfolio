@@ -1,8 +1,10 @@
 // import logo from './logo.svg';
 import './App.css';
 import './index.css';
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
+import { useState } from 'react';
 import bentil from './bentil.jpeg'
+import CustomSlider from './ImageSlider';
 
 //icons 
 import { FaHtml5 } from "react-icons/fa6";
@@ -17,42 +19,94 @@ import { IoCall } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
+import { FaRegCopyright } from "react-icons/fa6";
 
 function App() {
+  const aboutRef = useRef(null);
+  const portfolioRef = useRef(null);
+
+
+  const scrollToSection = (ref) => {
+    ref.current.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+  const [menuOpen, setMenuOpen] = useState(false); // State to handle menu visibility
+
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+
   useEffect(() => {
-    document.title = "Paapa Kwesi Bentil"; // Change the title here
-  }, []); // The empty dependency array ensures this runs only once when the component mounts
+    document.title = "Paapa Kwesi Bentil";
+  }, []);
 
   return (
     <div>
-      <div className='flex justify-around mt-2 border w-full rounded-2xl bg-gray-300 h-16 text-center'>
-        <img
-          src={bentil}
-          alt="Bentil"
-          className=" h-16 w-16 object-cover  rounded-full shadow-lg"
-        />
-        <div className='flex space-x-5 mt-3 text-xl'>
 
-          <a href='/'>Home</a>
-          <a href='/'>about Me</a>
-          <a href='/'>Portfolio</a>
-          <a href='/' onClick={() => alert('coming soon')}>Blog</a>
-        </div>
-        <button className='text-white bg-black p-1 w-32  h-10 mt-3 rounded-2xl hover:text-black hover:bg-white'><a href="mailto:paapabentil122@gmail.com" target="_blank" rel="noopener noreferrer">
-  Hire Me
-</a></button>
-      </div>
-      <div className=" flex justify-center items-center h-screen w-screen space-x-24 ">
+      <div className="flex justify-between items-center mt-2 border w-full rounded-2xl bg-gray-300 h-16 text-center px-4 sm:px-6 relative">
+
+
         <img
           src={bentil}
           alt="Bentil"
-          className=" w-80 h-96 object-cover ml-24 rounded-lg shadow-lg"
+          className="h-16 w-16 object-cover rounded-full shadow-lg"
         />
-        <div className="w-auto h-auto ">
-          <h1 className="text-4xl">Paapa Kwesi Bentil</h1>
+
+        <button
+          onClick={toggleMenu}
+          className="sm:hidden text-gray-700 text-2xl absolute right-4"
+        >
+          &#9776;
+        </button>
+
+
+        <div className="hidden sm:flex flex-grow justify-center space-x-5 text-xl mt-1">
+          <button>Home</button>
+          <button onClick={() => scrollToSection(aboutRef)}>About Me</button>
+          <button onClick={() => scrollToSection(portfolioRef)}>Portfolio</button>
+          <button onClick={() => alert('coming soon')}>Blog</button>
+        </div>
+
+        {/* Hire Me Button - Visible only on larger screens and positioned on the far right */}
+        <button className="hidden sm:block text-white bg-black p-1 w-32 h-10 mt-3 rounded-2xl hover:text-black hover:bg-white absolute right-4">
+          <a href="mailto:paapabentil122@gmail.com" target="_blank" rel="noopener noreferrer">
+            Hire Me
+          </a>
+        </button>
+
+        {/* Sliding Menu for Mobile */}
+        <div
+          className={`sm:hidden fixed top-0 right-0 bg-gray-300 w-64 h-full transform transition-transform duration-300 ease-in-out ${menuOpen ? 'translate-x-0' : 'translate-x-full'} z-50`}
+        >
+          <div className="flex justify-end p-4">
+            <button onClick={toggleMenu} className="text-2xl text-gray-700">
+              &times; {/* Close Button */}
+            </button>
+          </div>
+          <div className="flex flex-col space-y-6 mt-10 text-xl text-center">
+            <button onClick={() => scrollToSection(aboutRef)} className="text-gray-700">Home</button>
+            <button onClick={() => scrollToSection(aboutRef)} className="text-gray-700">About Me</button>
+            <button onClick={() => scrollToSection(portfolioRef)} className="text-gray-700">Portfolio</button>
+            <button onClick={() => alert('coming soon')} className="text-gray-700">Blog</button>
+          </div>
+        </div>
+      </div>
+
+      <div className="flex flex-col md:flex-row justify-center items-center h-screen w-screen space-y-8 md:space-y-0 md:space-x-24 mt-10 mb-10 md:mt-0 md:mb-0">
+
+        <img
+          src={bentil}
+          alt="Bentil"
+          className="w-80 h-96 object-cover rounded-lg shadow-lg"
+        />
+
+
+        <div className="w-auto h-auto text-center md:text-left">
+          <h1 className="text-4xl font-bold">Paapa Kwesi Bentil</h1>
           <h1 className="text-gray-500">FULLSTACK ENGINEER</h1>
           <br />
-          <ul className="grid grid-cols-2 gap-4 ">
+
+
+          <ul className="grid grid-cols-2 gap-4 md:grid-cols-2 sm:grid-cols-1">
             <li className="flex justify-center bg-gray-300 p-4 rounded w-48">
               <FaHtml5 className="mt-1 mr-1" color="orange" /> HTML
             </li>
@@ -72,15 +126,16 @@ function App() {
               <FaJava className="mt-1 mr-1" color="red" /> JAVA
             </li>
             <li className="flex justify-center bg-gray-300 p-4 rounded w-48">
-              <FaJava className="mt-1 mr-1" color="red" /> PHP
+              <FaPhp className="mt-1 mr-1" color="red" /> PHP
             </li>
             <li className="flex justify-center bg-gray-300 p-4 rounded w-48">
               <GrMysql className="mt-1 mr-1" color="blue" /> MYSQL
             </li>
           </ul>
         </div>
-      </div><br /><br /><br />
-      <div className='text-center bg-gray-300 p-10'>
+      </div>
+
+      <div ref={aboutRef} className='text-center bg-gray-300 p-10'>
         <h1 className='text-xl'>PROFESSIONAL SUMMARY</h1><br />
         <p className='text-center'>I am a passionate and detail-oriented Fullstack Engineer with experience in designing, developing, and maintaining dynamic web applications. Proficient in both frontend and backend technologies, including React, JavaScript, TailwindCSS, Java, and PHP, I have a strong foundation in building responsive, user-friendly interfaces and creating efficient, scalable server-side solutions. My expertise lies in creating seamless user experiences, optimizing performance, and working collaboratively with cross-functional teams to deliver high-quality products.
 
@@ -94,7 +149,7 @@ function App() {
           </div>
           <div>
             <h2>Drop an email</h2>
-            <p className='flex'><MdEmail className='mt-1 mr-1' color='black' /><a href="mailto:paapabentil122@gmail.com" target="_blank" rel="noopener noreferrer">
+            <p className='flex'><MdEmail className='mt-1 mr-1' color='black' size={22} /><a href="mailto:paapabentil122@gmail.com" target="_blank" rel="noopener noreferrer">
               paapabentil122@gmail.com
             </a></p>
           </div>
@@ -105,7 +160,7 @@ function App() {
                 <FaGithub color='black' size={24} />
               </a>
               <a href="https://www.linkedin.com/in/paapa-bentil-89b613268" rel="noopener noreferrer" className="flex items-center mt-1 mr-1">
-                <FaLinkedin color="blue" size={24} />
+                <FaLinkedin color="black" size={24} />
               </a>
             </p>
           </div>
@@ -114,9 +169,30 @@ function App() {
       <div className='text-center bg-black text-white p-4'>
         <h1 className='text-2xl'>Certified Full-Stack Developer</h1>
       </div>
-      <div className='mt-4'>
+      <div ref={portfolioRef} className='mt-10 p-8'><br />
         <h1 className='text-center text-xl text-gray-400'>Portfolio</h1>
-        <h1 className='text-center text-2xl'>Recent Works</h1>
+        <h1 className='text-center text-2xl'>Recent Works</h1><br />
+        <CustomSlider />
+      </div><br /><br />
+      <div className='bg-gray-300 p-6 mt-4 text-center'>
+        <p className='flex justify-center '>
+          <a href='https://github.com/PBentil' rel='noopener noreferrer' className='flex items-center mt-1 mr-1'>
+            <FaGithub color='black' size={24} />
+          </a>
+          <a href="https://www.linkedin.com/in/paapa-bentil-89b613268" rel="noopener noreferrer" className="flex items-center mt-1 mr-1">
+            <FaLinkedin color="black" size={24} />
+          </a>
+          <a href="mailto:paapabentil122@gmail.com" target="_blank" rel="noopener noreferrer" className="flex items-center mt-1 mr-1">
+            <MdEmail size={28} />
+          </a>
+        </p>
+        <a href="mailto:paapabentil122@gmail.com" target="_blank" rel="noopener noreferrer" className='text-xl'>
+          hire@paapabentil122@gmail.com
+        </a>
+        <div>
+          <p className='flex justify-center'><FaRegCopyright className='mt-1.5 mr-1' /> 2025</p>
+        </div>
+        <h1>Paapa Kwesi Bentil</h1>
       </div>
 
     </div>
