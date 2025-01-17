@@ -101,7 +101,7 @@ function App() {
 
 
         <div className="w-auto h-auto text-center md:text-left">
-          <h1 className="text-4xl font-bold">Paapa Kwesi Bentil</h1>
+          <h1 className="text-4xl ">Paapa Kwesi Bentil</h1>
           <h1 className="text-gray-500">FULLSTACK ENGINEER</h1>
           <br />
 
