@@ -142,29 +142,50 @@ function App() {
           With a keen eye for design and a focus on clean, maintainable code, I strive to continually enhance my skills and stay up-to-date with the latest industry trends. I am committed to delivering solutions that not only meet technical requirements but also exceed user expectations.
 
         </p><br /><br />
-        <div className='flex justify-around'>
-          <div>
-            <h2>Let's get in touch</h2>
-            <p className='flex'><IoCall className='mt-1 mr-1' color='black' />+233509840139</p>
+        <div className="flex flex-col sm:flex-row sm:justify-around items-center sm:items-start gap-6 p-4">
+          <div className="text-center sm:text-left">
+            <h2 className="text-lg mb-2">Let's get in touch</h2>
+            <p className="flex items-center justify-center sm:justify-start text-sm">
+              <IoCall className="mr-2" color="black" /> +233509840139
+            </p>
           </div>
-          <div>
-            <h2>Drop an email</h2>
-            <p className='flex'><MdEmail className='mt-1 mr-1' color='black' size={22} /><a href="mailto:paapabentil122@gmail.com" target="_blank" rel="noopener noreferrer">
-              paapabentil122@gmail.com
-            </a></p>
-          </div>
-          <div>
-            <h2>Follow me</h2>
-            <p className='flex'>
-              <a href='https://github.com/PBentil' rel='noopener noreferrer' className='flex items-center mt-1 mr-1'>
-                <FaGithub color='black' size={24} />
+          <div className="text-center sm:text-left">
+            <h2 className="text-lg  mb-2">Drop an email</h2>
+            <p className="flex items-center justify-center sm:justify-start text-sm">
+              <MdEmail className="mr-2" color="black" size={22} />
+              <a
+                href="mailto:paapabentil122@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline text-blue-600 hover:text-blue-800"
+              >
+                paapabentil122@gmail.com
               </a>
-              <a href="https://www.linkedin.com/in/paapa-bentil-89b613268" rel="noopener noreferrer" className="flex items-center mt-1 mr-1">
+            </p>
+          </div>
+          <div className="text-center sm:text-left">
+            <h2 className="text-lg  mb-2">Follow me</h2>
+            <p className="flex justify-center sm:justify-start space-x-4">
+              <a
+                href="https://github.com/PBentil"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center"
+              >
+                <FaGithub color="black" size={24} />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/paapa-bentil-89b613268"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center"
+              >
                 <FaLinkedin color="black" size={24} />
               </a>
             </p>
           </div>
-        </div> <br /><br />
+        </div>
+        <br /><br />
       </div>
       <div className='text-center bg-black text-white p-4'>
         <h1 className='text-2xl'>Certified Full-Stack Developer</h1>
