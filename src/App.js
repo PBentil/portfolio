@@ -42,7 +42,7 @@ function App() {
   return (
     <div>
 
-      <div className="flex justify-between items-center mt-2 border w-full rounded-2xl bg-gray-300 h-16 text-center px-4 sm:px-6 relative">
+      <div className="flex justify-between items-center mt-2  w-full rounded-2xl h-16 text-center px-4 sm:bg-white sm:px-6 relative">
 
 
         <img
