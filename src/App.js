@@ -3,7 +3,7 @@ import './App.css';
 import './index.css';
 import React, { useEffect, useRef } from "react";
 import { useState } from 'react';
-import bentil from './bentil.jpeg'
+import bentil from './bentil.jpg'
 import CustomSlider from './ImageSlider';
 
 //icons 
