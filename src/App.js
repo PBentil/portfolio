@@ -188,7 +188,7 @@ function App() {
         <br /><br />
       </div>
       <div className='text-center bg-black text-white p-4'>
-        <h1 className='text-2xl'>Certified Full-Stack Developer</h1>
+        <h1 className='text-2xl'>Full-Stack Developer | BSc Computer Science Student</h1>
       </div>
       <div ref={portfolioRef} className='mt-10 p-8'><br />
         <h1 className='text-center text-xl text-gray-400'>Portfolio</h1>
@@ -211,7 +211,9 @@ function App() {
           hire@paapabentil122@gmail.com
         </a>
         <div>
-          <p className='flex justify-center'><FaRegCopyright className='mt-1.5 mr-1' /> 2025</p>
+          <p className="flex items-center justify-center text-sm text-gray-500">
+            <FaRegCopyright className="mr-1" /> {new Date().getFullYear()}
+          </p>
         </div>
         <h1>Paapa Kwesi Bentil</h1>
       </div>
