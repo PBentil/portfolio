@@ -23,7 +23,7 @@ const CustomSlider = () => {
         },
         {
             id: 3,
-            title: "Task Management Dashboard",
+            title: "Finance Tracker",
             description: "A comprehensive project management tool with team collaboration features, built using React and integrated with cloud services.",
             image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
             technologies: ["React", "AWS", "Docker"],
