@@ -1,6 +1,5 @@
 {
   "name": "portfolio",
-  "homepage": "bentil.dev.s3-website.af-south-1.amazonaws.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
