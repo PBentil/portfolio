@@ -31,6 +31,7 @@ import {
 } from "react-icons/fa6";
 import bentil from "../src/bentil.jpg";
 import CustomSlider from "./ImageSlider";
+import { RiNextjsFill } from "react-icons/ri";
 
 
 
@@ -57,6 +58,7 @@ const IconMap = {
     copyright: FaRegCopyright,
     typescript: SiTypescript,
     Nestjs: SiNestjs,
+    Nextjs: RiNextjsFill()
 };
 
 const Icon = ({ name, color = "currentColor", size = 24, className = "" }) => {
@@ -111,7 +113,8 @@ function App() {
         { name: "Docker", icon: "docker", color: "#2496ED" },
         { name: "Tailwind CSS", icon: "tailwind", color: "#06B6D4" },
         {name:"TypeScript", icon: "typescript", color: "#2496ED" },
-        { name: "NestJS", icon: "nestjs", color: "#E0234E" },
+        { name: "NestJs", icon: "Nestjs", color: "#E0234E" },
+        {name: "NextJs", icon: "Nextjs", color: "#1572B6" },
     ];
 
     return (
