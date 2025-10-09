@@ -16,7 +16,7 @@ import {
     SiTailwindcss,
     SiMysql,
     SiPostgresql,
-    SiReactos, SiTypescript
+    SiReactos, SiTypescript,SiNestjs
 } from "react-icons/si";
 import {
     IoCall,
@@ -31,6 +31,7 @@ import {
 } from "react-icons/fa6";
 import bentil from "../src/bentil.jpg";
 import CustomSlider from "./ImageSlider";
+import { RiNextjsFill } from "react-icons/ri";
 
 
 
@@ -56,6 +57,8 @@ const IconMap = {
     close: IoClose,
     copyright: FaRegCopyright,
     typescript: SiTypescript,
+    Nestjs: SiNestjs,
+    Nextjs: RiNextjsFill,
 };
 
 const Icon = ({ name, color = "currentColor", size = 24, className = "" }) => {
@@ -75,11 +78,14 @@ function App() {
     const [scrolled, setScrolled] = useState(false);
 
     const scrollToSection = (ref) => {
-        ref.current.scrollIntoView({
+        const offsetTop = ref.current.offsetTop - 60;
+        window.scrollTo({
+            top: offsetTop,
             behavior: "smooth",
         });
         setMenuOpen(false);
     };
+
 
     const toggleMenu = () => setMenuOpen(!menuOpen);
 
@@ -110,6 +116,8 @@ function App() {
         { name: "Docker", icon: "docker", color: "#2496ED" },
         { name: "Tailwind CSS", icon: "tailwind", color: "#06B6D4" },
         {name:"TypeScript", icon: "typescript", color: "#2496ED" },
+        { name: "NestJs", icon: "Nestjs", color: "#E0234E" },
+        {name: "NextJs", icon: "Nextjs", color: "#1572B6" },
     ];
 
     return (
@@ -159,92 +167,89 @@ function App() {
                         </button>
                     </div>
                 </div>
-
-                <div className={`md:hidden absolute top-16 left-0 right-0 bg-white shadow-lg transform transition-all duration-300 ${
-                    menuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
-                }`}>
-                    <div className="px-4 py-6 space-y-4">
-                        <button onClick={() => {window.scrollTo({top: 0, behavior: 'smooth'}); setMenuOpen(false);}}
-                                className="block w-full text-left text-gray-700 hover:text-blue-600 py-2">
-                            Home
-                        </button>
-                        <button onClick={() => scrollToSection(aboutRef)}
-                                className="block w-full text-left text-gray-700 hover:text-blue-600 py-2">
-                            About
-                        </button>
-                        <button onClick={() => scrollToSection(portfolioRef)}
-                                className="block w-full text-left text-gray-700 hover:text-blue-600 py-2">
-                            Portfolio
-                        </button>
-                        <button onClick={() => scrollToSection(contactRef)}
-                                className="block w-full text-left text-gray-700 hover:text-blue-600 py-2">
-                            Contact
-                        </button>
-                        <a href="mailto:paapabentil122@gmail.com"
-                           className="block bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center px-6 py-3 rounded-full mt-4">
-                            Hire Me
-                        </a>
-                    </div>
-                </div>
             </nav>
+            <div className={`md:hidden absolute top-16 left-0 right-0 bg-white shadow-lg z-40 transform transition-all duration-300 ${
+                menuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
+            }`}>
 
-            <section className="pt-20 lg:pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+            <div className="px-4 py-6 space-y-4">
+                    <button onClick={() => {window.scrollTo({top: 0, behavior: 'smooth'}); setMenuOpen(false);}}
+                            className="block w-full text-left text-gray-700 hover:text-blue-600 py-2">
+                        Home
+                    </button>
+                    <button onClick={() => scrollToSection(aboutRef)}
+                            className="block w-full text-left text-gray-700 hover:text-blue-600 py-2">
+                        About
+                    </button>
+                    <button onClick={() => scrollToSection(portfolioRef)}
+                            className="block w-full text-left text-gray-700 hover:text-blue-600 py-2">
+                        Portfolio
+                    </button>
+                    <button onClick={() => scrollToSection(contactRef)}
+                            className="block w-full text-left text-gray-700 hover:text-blue-600 py-2">
+                        Contact
+                    </button>
+                    <a href="mailto:paapabentil122@gmail.com"
+                       className="block bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center px-6 py-3 rounded-full mt-4">
+                        Hire Me
+                    </a>
+                </div>
+            </div>
+
+            <section className="pt-24 pb-20 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-7xl mx-auto">
-                    <div className="flex flex-col lg:flex-row items-center justify-between space-y-12 lg:space-y-0 lg:space-x-12">
-                        <div className="lg:w-1/2 flex justify-center">
-                            <div className="relative">
-                                <img
-                                    src={bentil}
-                                    alt="Paapa Kwesi Bentil"
-                                    className="w-80 h-96 lg:w-96 lg:h-[28rem] object-cover rounded-2xl shadow-2xl"
-                                />
-                                <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center animate-pulse">
-                                    <Icon name="react" size={32} color="white" />
-                                </div>
-                            </div>
+                    <div className="flex flex-col items-center text-center space-y-12">
+                        <div>
+                            <p className="text-blue-600 font-medium mb-2 tracking-wide uppercase">
+                                Welcome to my portfolio
+                            </p>
+                            <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-4">
+                                Paapa Kwesi{" "}
+                                <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            Bentil
+          </span>
+                            </h1>
+                            <p className="text-xl text-gray-600 mb-8">
+                                Full-Stack Engineer & Problem Solver
+                            </p>
                         </div>
 
-                        <div className="lg:w-1/2 text-center lg:text-left">
-                            <div className="mb-6">
-                                <p className="text-blue-600 font-medium mb-2 tracking-wide uppercase">Welcome to my portfolio</p>
-                                <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-4">
-                                    Paapa Kwesi
-                                    <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                    Bentil
-                  </span>
-                                </h1>
-                                <p className="text-xl text-gray-600 mb-8">Full-Stack Engineer & Problem Solver</p>
-                            </div>
-
-                            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 mb-8">
-                                {skills.map((skill, index) => (
-                                    <div key={skill.name}
-                                         className="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-200 group"
-                                         style={{animationDelay: `${index * 0.1}s`}}>
-                                        <div className="flex flex-col items-center space-y-2">
-                                            <div className="p-2 rounded-lg bg-gray-50 group-hover:bg-gray-100 transition-colors duration-200">
-                                                <Icon name={skill.icon} color={skill.color} size={24} />
-                                            </div>
-                                            <span className="text-xs font-medium text-gray-700 text-center leading-tight">{skill.name}</span>
+                        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 mb-8">
+                            {skills.map((skill, index) => (
+                                <div
+                                    key={skill.name}
+                                    className="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-200 group"
+                                >
+                                    <div className="flex flex-col items-center space-y-2">
+                                        <div className="p-2 rounded-lg bg-gray-50 group-hover:bg-gray-100 transition-colors duration-200">
+                                            <Icon name={skill.icon} color={skill.color} size={24} />
                                         </div>
+                                        <span className="text-xs font-medium text-gray-700 text-center leading-tight">
+                {skill.name}
+              </span>
                                     </div>
-                                ))}
-                            </div>
+                                </div>
+                            ))}
+                        </div>
 
-                            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center lg:justify-start">
-                                <button onClick={() => scrollToSection(portfolioRef)}
-                                        className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-200 transform hover:scale-105">
-                                    View My Work
-                                </button>
-                                <a href="mailto:paapabentil122@gmail.com"
-                                   className="border-2 border-gray-300 text-gray-700 px-8 py-3 rounded-full hover:border-blue-500 hover:text-blue-600 transition-all duration-200">
-                                    Get In Touch
-                                </a>
-                            </div>
+                        <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center">
+                            <button
+                                onClick={() => scrollToSection(portfolioRef)}
+                                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-200 transform hover:scale-105"
+                            >
+                                View My Work
+                            </button>
+                            <a
+                                href="mailto:paapabentil122@gmail.com"
+                                className="border-2 border-gray-300 text-gray-700 px-8 py-3 rounded-full hover:border-blue-500 hover:text-blue-600 transition-all duration-200"
+                            >
+                                Get In Touch
+                            </a>
                         </div>
                     </div>
                 </div>
             </section>
+
 
             <section ref={aboutRef} className="py-20 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
