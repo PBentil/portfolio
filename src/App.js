@@ -58,7 +58,7 @@ const IconMap = {
     copyright: FaRegCopyright,
     typescript: SiTypescript,
     Nestjs: SiNestjs,
-    Nextjs: RiNextjsFill()
+    Nextjs: RiNextjsFill,
 };
 
 const Icon = ({ name, color = "currentColor", size = 24, className = "" }) => {
