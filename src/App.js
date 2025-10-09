@@ -164,34 +164,33 @@ function App() {
                         </button>
                     </div>
                 </div>
-
-                <div className={`md:hidden absolute top-16 left-0 right-0 bg-white shadow-lg transform transition-all duration-300 ${
-                    menuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
-                }`}>
-                    <div className="px-4 py-6 space-y-4">
-                        <button onClick={() => {window.scrollTo({top: 0, behavior: 'smooth'}); setMenuOpen(false);}}
-                                className="block w-full text-left text-gray-700 hover:text-blue-600 py-2">
-                            Home
-                        </button>
-                        <button onClick={() => scrollToSection(aboutRef)}
-                                className="block w-full text-left text-gray-700 hover:text-blue-600 py-2">
-                            About
-                        </button>
-                        <button onClick={() => scrollToSection(portfolioRef)}
-                                className="block w-full text-left text-gray-700 hover:text-blue-600 py-2">
-                            Portfolio
-                        </button>
-                        <button onClick={() => scrollToSection(contactRef)}
-                                className="block w-full text-left text-gray-700 hover:text-blue-600 py-2">
-                            Contact
-                        </button>
-                        <a href="mailto:paapabentil122@gmail.com"
-                           className="block bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center px-6 py-3 rounded-full mt-4">
-                            Hire Me
-                        </a>
-                    </div>
-                </div>
             </nav>
+            <div className={`md:hidden absolute top-16 left-0 right-0 bg-white shadow-lg transform transition-all duration-300 ${
+                menuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
+            }`}>
+                <div className="px-4 py-6 space-y-4">
+                    <button onClick={() => {window.scrollTo({top: 0, behavior: 'smooth'}); setMenuOpen(false);}}
+                            className="block w-full text-left text-gray-700 hover:text-blue-600 py-2">
+                        Home
+                    </button>
+                    <button onClick={() => scrollToSection(aboutRef)}
+                            className="block w-full text-left text-gray-700 hover:text-blue-600 py-2">
+                        About
+                    </button>
+                    <button onClick={() => scrollToSection(portfolioRef)}
+                            className="block w-full text-left text-gray-700 hover:text-blue-600 py-2">
+                        Portfolio
+                    </button>
+                    <button onClick={() => scrollToSection(contactRef)}
+                            className="block w-full text-left text-gray-700 hover:text-blue-600 py-2">
+                        Contact
+                    </button>
+                    <a href="mailto:paapabentil122@gmail.com"
+                       className="block bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center px-6 py-3 rounded-full mt-4">
+                        Hire Me
+                    </a>
+                </div>
+            </div>
 
             <section className="pt-20 lg:pt-32 pb-20 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-7xl mx-auto">
