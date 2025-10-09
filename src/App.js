@@ -56,7 +56,7 @@ const IconMap = {
     close: IoClose,
     copyright: FaRegCopyright,
     typescript: SiTypescript,
-    nestjs: SiNestjs,
+    Nestjs: SiNestjs,
 };
 
 const Icon = ({ name, color = "currentColor", size = 24, className = "" }) => {
@@ -123,11 +123,10 @@ function App() {
                     <div className="flex justify-between items-center h-16">
                         <div className="flex items-center space-x-3">
                             <img
-                                src="https://undraw.co/api/illustrations/developer_mindset.svg"
-                                alt="Developer Illustration"
-                                className="w-80 h-96 lg:w-96 lg:h-[28rem] object-cover rounded-2xl shadow-2xl"
+                                src={bentil}
+                                alt="Bentil"
+                                className="h-12 w-12 object-cover rounded-full ring-2 ring-blue-500 ring-offset-2"
                             />
-
                             <span className="font-bold text-xl text-gray-900">Bentil</span>
                         </div>
 
@@ -197,8 +196,8 @@ function App() {
                         <div className="lg:w-1/2 flex justify-center">
                             <div className="relative">
                                 <img
-                                    src={bentil}
-                                    alt="Paapa Kwesi Bentil"
+                                    src="https://undraw.co/api/illustrations/developer_mindset.svg"
+                                    alt="Developer Illustration"
                                     className="w-80 h-96 lg:w-96 lg:h-[28rem] object-cover rounded-2xl shadow-2xl"
                                 />
                                 <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center animate-pulse">
