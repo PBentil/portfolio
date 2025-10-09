@@ -78,11 +78,14 @@ function App() {
     const [scrolled, setScrolled] = useState(false);
 
     const scrollToSection = (ref) => {
-        ref.current.scrollIntoView({
+        const offsetTop = ref.current.offsetTop - 60;
+        window.scrollTo({
+            top: offsetTop,
             behavior: "smooth",
         });
         setMenuOpen(false);
     };
+
 
     const toggleMenu = () => setMenuOpen(!menuOpen);
 
@@ -165,10 +168,11 @@ function App() {
                     </div>
                 </div>
             </nav>
-            <div className={`md:hidden absolute top-16 left-0 right-0 bg-white shadow-lg transform transition-all duration-300 ${
+            <div className={`md:hidden absolute top-16 left-0 right-0 bg-white shadow-lg z-40 transform transition-all duration-300 ${
                 menuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
             }`}>
-                <div className="px-4 py-6 space-y-4">
+
+            <div className="px-4 py-6 space-y-4">
                     <button onClick={() => {window.scrollTo({top: 0, behavior: 'smooth'}); setMenuOpen(false);}}
                             className="block w-full text-left text-gray-700 hover:text-blue-600 py-2">
                         Home
@@ -192,7 +196,7 @@ function App() {
                 </div>
             </div>
 
-            <section className="pt-20 lg:pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+            <section className="pt-24 pb-20 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-7xl mx-auto">
                     <div className="flex flex-col items-center text-center space-y-12">
                         <div>
