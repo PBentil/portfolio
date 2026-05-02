@@ -81,8 +81,8 @@ const CustomSlider = () => {
         {
             id: 9,
             title: "Student Companion App",
-            description: "A mobile application built with Kotlin to help students stay organized and productive. Features include timetable management, assignment tracking, deadline reminders, and academic resource access — all in one intuitive Android app.",
-            image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80",
+            description: "A mobile application built with Kotlin to help students stay organized and productive. Features include timetable management, assignment tracking, deadline reminders, and academic resource access all in one intuitive Android app.",
+            image: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=800&q=80",
             technologies: ["Kotlin", "Android"],
             liveLink: "#",
             githubLink: "https://github.com/PBentil/Student-Companion-App"
