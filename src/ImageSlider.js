@@ -61,7 +61,7 @@ const CustomSlider = () => {
             githubLink: "https://github.com/PBentil/church-sys"
         },
         {
-            id: 6,
+            id: 7,
             title: "POS System",
             description: "A modern frontend Point of Sale (POS) web application built with React, featuring a clean interface for browsing food items, adding them to cart, and processing payments. Designed for restaurants or cafés to streamline ordering and checkout experiences — frontend only.",
             image: "https://images.unsplash.com/photo-1556745757-8d76bdb6984b?auto=format&fit=crop&w=800&q=80",
@@ -70,13 +70,40 @@ const CustomSlider = () => {
             githubLink: "https://github.com/PBentil/POS"
         },
         {
-            id: 7,
+            id: 8,
             title: "TikTok Clone",
             description: "A frontend web clone of TikTok built with React, featuring short-form video playback, interactive likes, and a scroll-based feed experience similar to the original app. Designed to replicate the core TikTok interface and user interactions using modern React techniques.",
             image: "https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?auto=format&fit=crop&w=800&q=80",
             technologies: ["React"],
             liveLink: "https://tittok-clone-c5a01.web.app",
             githubLink: "https://github.com/tiktok-clone-amalitech/frontend-web"
+        },
+        {
+            id: 9,
+            title: "Student Companion App",
+            description: "A mobile application built with Kotlin to help students stay organized and productive. Features include timetable management, assignment tracking, deadline reminders, and academic resource access — all in one intuitive Android app.",
+            image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80",
+            technologies: ["Kotlin", "Android"],
+            liveLink: "#",
+            githubLink: "https://github.com/PBentil/Student-Companion-App"
+        },
+        {
+            id: 10,
+            title: "Activity Tracker",
+            description: "A web application built with Laravel that enables users to log, monitor, and analyze their daily activities and habits. Features include activity categorization, progress visualization, and historical reports to help users stay consistent with their goals.",
+            image: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=800&q=80",
+            technologies: ["Laravel", "PHP", "postgreSql"],
+            liveLink: "#",
+            githubLink: "https://github.com/PBentil/activity-tracker"
+        },
+        {
+            id: 11,
+            title: "CarePulse – Patient Appointment System",
+            description: "A modern healthcare appointment management platform built with Next.js, allowing patients to book, reschedule, and track appointments with ease. Features include doctor availability management, SMS notifications, and an admin dashboard for streamlined clinic operations.",
+            image: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=800&q=80",
+            technologies: ["Next.js", "TypeScript"],
+            liveLink: "#",
+            githubLink: "https://github.com/PBentil/CarePluse"
         }
     ];
 
@@ -120,8 +147,8 @@ const CustomSlider = () => {
                                         key={index}
                                         className="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full font-medium"
                                     >
-                    {tech}
-                  </span>
+                                        {tech}
+                                    </span>
                                 ))}
                             </div>
 
@@ -133,20 +160,21 @@ const CustomSlider = () => {
                                     View Live
                                 </button>
                                 <a
-                                    href={project.githubLink}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex-1 border-2 border-gray-300 text-gray-700 text-center py-2 px-4 rounded-lg hover:border-blue-500 hover:text-blue-600 transition-all duration-200 text-sm font-medium"
+                                href={project.githubLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex-1 border-2 border-gray-300 text-gray-700 text-center py-2 px-4 rounded-lg hover:border-blue-500 hover:text-blue-600 transition-all duration-200 text-sm font-medium"
                                 >
-                                    <FaGithub size={16} className="inline mr-1" />
-                                    Code
-                                </a>
-                            </div>
+                                <FaGithub size={16} className="inline mr-1" />
+                                Code
+                            </a>
                         </div>
                     </div>
-                ))}
+                        </div>
+                    ))}
             </div>
         </>
     );
 };
+
 export default CustomSlider;
