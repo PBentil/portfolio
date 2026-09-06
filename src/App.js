@@ -29,7 +29,7 @@ import {
 import {
     FaRegCopyright
 } from "react-icons/fa6";
-import bentil from "../src/bentil.jpg";
+import bentil from "../public/bentil.jpg";
 import CustomSlider from "./ImageSlider";
 import { RiNextjsFill } from "react-icons/ri";
 
