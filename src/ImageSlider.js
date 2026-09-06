@@ -81,8 +81,8 @@ const CustomSlider = () => {
         {
             id: 9,
             title: "Student Companion App",
-            description: "A mobile application built with Kotlin to help students stay organized and productive. Features include timetable management, assignment tracking, deadline reminders, and academic resource access all in one intuitive Android app.",
-            image: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=800&q=80",
+            description: "A mobile application built with Kotlin and Android to help students stay organized and productive. Features include timetable management, assignment tracking, deadline reminders, academic resource access, and a simple dashboard for managing daily academic activities.",
+            image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80",
             technologies: ["Kotlin", "Android"],
             liveLink: "#",
             githubLink: "https://github.com/PBentil/Student-Companion-App"
@@ -102,8 +102,17 @@ const CustomSlider = () => {
             description: "A modern healthcare appointment management platform built with Next.js, allowing patients to book, reschedule, and track appointments with ease. Features include doctor availability management, SMS notifications, and an admin dashboard for streamlined clinic operations.",
             image: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=800&q=80",
             technologies: ["Next.js", "TypeScript"],
-            liveLink: "#",
+            liveLink: "https://care-pulse-nine-xi.vercel.app/",
             githubLink: "https://github.com/PBentil/CarePluse"
+        },
+        {
+            id: 12,
+            title: "CCMS – Church Convention Management System",
+            description: "A modern church convention management system built with React and NestJs, designed to streamline the planning and coordination of church conventions, conferences, and special events. Features include attendee registration, event and session management, participant tracking, announcements, and an admin dashboard for efficient convention operations.",
+            image: "https://images.unsplash.com/photo-1438032005730-c779502df39b?auto=format&fit=crop&w=800&q=80",
+            technologies: ["React", "NestJs", "PostgreSql"],
+            liveLink: "https://ccms-tau.vercel.app/",
+            githubLink: "https://github.com/PBentil/ccms-frontend"
         }
     ];
 
