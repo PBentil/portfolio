@@ -29,7 +29,6 @@ import {
 import {
     FaRegCopyright
 } from "react-icons/fa6";
-import bentil from "../public/bentil.jpg";
 import CustomSlider from "./ImageSlider";
 import { RiNextjsFill } from "react-icons/ri";
 
@@ -129,7 +128,7 @@ function App() {
                     <div className="flex justify-between items-center h-16">
                         <div className="flex items-center space-x-3">
                             <img
-                                src={bentil}
+                                src='/bentil.jpg'
                                 alt="Bentil"
                                 className="h-12 w-12 object-cover rounded-full ring-2 ring-blue-500 ring-offset-2"
                             />
